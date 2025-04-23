@@ -2,7 +2,11 @@ from flask import Flask, render_template,request, redirect
 from helper import preprocessing, vectorizer, get_prediction
 from logger import logging
 
+
+
+
 app = Flask(__name__)
+
 
 logging.info('Flask server started')
 
@@ -43,7 +47,7 @@ def my_post():
         positive += 1
     
     reviews.insert(0, text)
-    return redirect(request.url)
+    return redirect(request.url) #redirecting to the current url
 
 if __name__ == "__main__":
     app.run()
